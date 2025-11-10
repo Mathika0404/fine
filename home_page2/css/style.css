@@ -1,3 +1,9 @@
+* {
+    margin: 0;           /* Remove default margin */
+    padding: 0;          /* Remove default padding */
+    box-sizing: border-box; 
+}
+
 /* Base */
 html {
   overflow-x: hidden; }
@@ -112,6 +118,8 @@ body:after {
     .site-section-heading {
       font-size: 3rem; } }
 
+/* Footer Links */
+
 .footer .btn.btn-link {
   display: block;
   margin-bottom: 5px;
@@ -120,9 +128,13 @@ body:after {
   color: var(--light);
   font-weight: normal;
   text-transform: capitalize;
-  transition: .3s;
+  transition: 0.3s;
+  background: none;
+  border: none;
+  gap: 20px;
 }
 
+/* Add arrow icon before each footer link */
 .footer .btn.btn-link::before {
   position: relative;
   content: "\f105";
@@ -131,23 +143,60 @@ body:after {
   margin-right: 10px;
 }
 
+/* Hover effect for footer links */
 .footer .btn.btn-link:hover {
   color: var(--primary);
   letter-spacing: 1px;
   box-shadow: none;
+  text-decoration: none;
 }
 
+/* Social media icons — perfect circle */
+.footer .d-flex .btn {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  border-radius: 50%; /* perfect circle */
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  padding: 0; /* remove padding to avoid oval look */
+  margin-right: 10px;
+  line-height: 1; /* fixes vertical centering */
+}
+
+/* Hover for social icons */
+.footer .d-flex .btn:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+
+/* Footer copyright */
 .copyright {
-  color: var(--light);
-  background: #000B1C;
+  display: block;
+  color: #DFE4FD;
+  /* background: #000B1C; */
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid #444; /* horizontal line above copyright */
 }
 
 .copyright a {
-  color: var(--light);
+  color: #DFE4FD;
+  text-decoration: none;
 }
 
 .copyright a:hover {
-  color: var(--primary);
+  color: #355EFC;
 }
 
 /* Responsive Text Fixes */
@@ -311,11 +360,15 @@ body:after {
   position: absolute;
   top: 0;
   width: 100%;
-  border-bottom: rgba(255, 255, 255, 0.7); }
+  border-bottom: rgba(255, 255, 255, 0.7);
+  background-color: #5991cc;
+ }
   .site-navbar .site-logo {
     position: relative;
     left: 0;
-    top: -5px; }
+    top: -5px; 
+
+  }
   .site-navbar .site-navigation .site-menu {
     margin-bottom: 0; }
     .site-navbar .site-navigation .site-menu .active {
@@ -324,19 +377,24 @@ body:after {
       padding: 20px 20px; }
     .site-navbar .site-navigation .site-menu a {
       text-decoration: none !important;
-      display: inline-block; }
+      display: inline-block;
+     }
     .site-navbar .site-navigation .site-menu > li {
-      display: inline-block; }
+      display: inline-block;
+     }
+
       .site-navbar .site-navigation .site-menu > li > a {
         padding: 20px 20px;
-        color: #000;
+        color: #000 ;
         display: inline-block;
         text-decoration: none !important; }
         .site-navbar .site-navigation .site-menu > li > a:hover {
-          color: #007bff; }
+          color: #007bff;
+         }
       .site-navbar .site-navigation .site-menu > li.social > a {
         padding-left: 5px;
-        padding-right: 5px; }
+        padding-right: 5px;
+      }
     .site-navbar .site-navigation .site-menu .has-children {
       position: relative; }
       .site-navbar .site-navigation .site-menu .has-children > a {
@@ -351,6 +409,7 @@ body:after {
           -webkit-transform: translateY(-50%);
           -ms-transform: translateY(-50%);
           transform: translateY(-50%);
+          color: #fff;
           font-family: 'icomoon'; }
       .site-navbar .site-navigation .site-menu .has-children .dropdown {
         visibility: hidden;
@@ -1664,40 +1723,83 @@ body:after {
     letter-spacing: .4em;
     text-transform: uppercase; }
 
-.footer-social a {
-  text-decoration: none !important; }
+/* === FOOTER === */
+.footer {
+  background-color: #000B1C;
+  color: var(--light);
+  font-family: "Poppins", sans-serif;
+}
 
-.footer-subscribe .form-control {
-  border-color: #fff !important; }
-  .footer-subscribe .form-control::-webkit-input-placeholder {
-    /* Chrome/Opera/Safari */
-    color: rgba(255, 255, 255, 0.5);
-    font-weight: 200;
-    font-style: italic; }
-  .footer-subscribe .form-control::-moz-placeholder {
-    /* Firefox 19+ */
-    color: rgba(255, 255, 255, 0.5);
-    font-weight: 200;
-    font-style: italic; }
-  .footer-subscribe .form-control:-ms-input-placeholder {
-    /* IE 10+ */
-    color: rgba(255, 255, 255, 0.5);
-    font-weight: 200;
-    font-style: italic; }
-  .footer-subscribe .form-control:-moz-placeholder {
-    /* Firefox 18- */
-    color: rgba(255, 255, 255, 0.5);
-    font-weight: 200;
-    font-style: italic; }
+.footer .btn.btn-link {
+  display: block;
+  margin-bottom: 8px;
+  padding: 0;
+  text-align: left;
+  color: var(--light);
+  font-weight: normal;
+  text-transform: capitalize;
+  font-size: 15px;
+  transition: 0.3s;
+}
 
-.footer-subscribe .btn {
-  height: 43px;
-  line-height: 1;
+.footer .btn.btn-link::before {
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 10px;
+  color: var(--primary);
+}
+
+.footer .btn.btn-link:hover {
+  color: var(--primary);
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.footer h4 {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.footer .btn-square {
+  width: 38px;
+  height: 38px;
   border: 1px solid #fff;
-  background: #fff !important;
-  color: #000 !important; }
-  .footer-subscribe .btn:hover, .footer-subscribe .btn:focus, .footer-subscribe .btn:active {
-    border: 1px solid #fff; }
+  color: #fff;
+  line-height: 36px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.footer .btn-square:hover {
+  background-color: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.map-container iframe {
+  border-radius: 10px;
+  width: 100%;
+  height: 250px;
+}
+
+/* copyright section (if you add later) */
+.copyright {
+  color: var(--light);
+  background: #000B1C;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+}
+
+.copyright a {
+  color: var(--light);
+  text-decoration: none;
+}
+
+.copyright a:hover {
+  color: var(--primary);
+}
 
 .cta-big-image > .container {
   position: relative; }
