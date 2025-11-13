@@ -67,15 +67,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                                            <div class="nav-item dropdown">
-      <a href="#" class="nav-link dropdown-toggle active" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Home
-      </a>
-      <div class="dropdown-menu border-light m-0" aria-labelledby="homeDropdown">
-        <!-- <a href="index.html" class="dropdown-item">Home Page 1</a> -->
-        <a href="./home_page2/index2.html" class="dropdown-item">Home Page 2</a>
-      </div>
-    </div>
+<!-- Home Dropdown -->
+<div class="nav-item dropdown">
+  <a href="index.html"
+     class="nav-link dropdown-toggle active"
+     id="homeDropdown"
+     role="button"
+     data-bs-toggle="dropdown"
+     aria-expanded="false">
+    Home
+  </a>
+  <div class="dropdown-menu border-light m-0" aria-labelledby="homeDropdown">
+    <a href="./home_page2/index2.html" class="dropdown-item">Home Page 2</a>
+  </div>
+</div>
                     <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="service.html" class="nav-item nav-link">Services</a>
                     <div class="nav-item dropdown">
@@ -133,8 +138,8 @@
             <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.3s">
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="img/service-1.webp" alt="">
-                        <a href=""><i class="fa fa-link fa-3x text-primary"></i></a>
+                        <img class="img-fluid rounded" src="img/service-1.webp" alt="service">
+                        <a href="404.html"><i class="fa fa-link fa-3x text-primary"></i></a>
                     </div>
                     <div class="project-title">
                         <h4 class="mb-0">Financial Planning</h4>
@@ -143,7 +148,7 @@
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
                         <img class="img-fluid rounded" src="img/service-2.webp" alt="">
-                        <a href=""><i class="fa fa-link fa-3x text-primary"></i></a>
+                        <a href="404.html"><i class="fa fa-link fa-3x text-primary"></i></a>
                     </div>
                     <div class="project-title">
                         <h4 class="mb-0">Cash Investment</h4>
@@ -152,7 +157,7 @@
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
                         <img class="img-fluid rounded" src="img/service-3.webp" alt="">
-                        <a href=""><i class="fa fa-link fa-3x text-primary"></i></a>
+                        <a href="404.html"><i class="fa fa-link fa-3x text-primary"></i></a>
                     </div>
                     <div class="project-title">
                         <h4 class="mb-0">Financial Consultancy</h4>
@@ -161,7 +166,7 @@
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
                         <img class="img-fluid rounded" src="img/service-4.webp" alt="">
-                        <a href=""><i class="fa fa-link fa-3x text-primary"></i></a>
+                        <a href="404.html"><i class="fa fa-link fa-3x text-primary"></i></a>
                     </div>
                     <div class="project-title">
                         <h4 class="mb-0">Business Loans</h4>
@@ -244,6 +249,15 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+        <script>
+  // Make the "Home" link navigate when clicked, but still allow dropdown toggle
+  document.getElementById("homeDropdown").addEventListener("click", function (e) {
+    if (!this.classList.contains("show") && !e.target.closest(".dropdown-menu")) {
+      // Go to index.html if dropdown isn't open yet
+      window.location.href = "index.html";
+    }
+  });
+</script>
 </body>
 
 </html>
